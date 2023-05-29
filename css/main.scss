@@ -1,0 +1,361 @@
+@import 'reset';
+@import 'variables';
+
+html{
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    font-size: $font-size;
+    color: $font-color;
+    a{
+        text-decoration: none;
+        color: inherit;
+        &:hover{
+            color: $hover;
+            transition: 0.2s;
+        }
+    }
+    h1{
+        font-size: $title-size;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+}
+
+/* --------------------- header --------------------- */
+header{
+    background: $header;
+    vertical-align: middle;
+    nav{
+        display: flex;
+        justify-content: space-between;
+        img{
+            width: 268px;
+            height: auto;
+            position: relative;
+        }
+        .nav{
+            display: flex;
+            padding: 70px 100px 40px 100px;
+            li{
+                font-size: 20px;
+                text-transform: uppercase;
+                &:hover{
+                    border-bottom: solid 2px $hover;
+                }
+            }
+        }
+        .menu > li{
+            margin-right: 35px;
+        }
+        .picto > li{
+            margin-left: 20px;
+            &:hover{
+                color: $hover;
+                transition: 0.2s;
+            }
+        }
+        #loupe{
+            margin-right: 30px;
+        }
+    }
+}
+
+/* --------------------- slider --------------------- */
+
+.slider img{
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    display: none;
+}
+img.active{
+    display: block;
+    animation: fade 0.8s;
+}
+@keyframes fade {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+div.left,
+div.right {
+  position: absolute;
+  top: 60%;
+  color: $font-color;
+  font-size: 20px;
+  cursor: pointer;
+  user-select: none;
+}
+div.left {
+    left: 0px;
+    background: #FFF;
+    padding: 10px;
+    border-radius: 0 50px 50px 0;
+    &:hover{
+        color: #FFF;
+        background-color: $hover;
+        transition: 0.2s;
+    }
+}
+  
+div.right {
+    right: 0px;
+    background: #FFF;
+    padding: 10px;
+    border-radius: 50px 0 0 50px;
+    &:hover{
+        color: #FFF;
+        background-color: $hover;
+        transition: 0.2s;
+    }
+}
+
+.button-white{
+    position: absolute;
+    top: 85%;
+    background: $main;
+    padding: 10px 35px;
+    z-index: 5;
+    left: 45%;
+}
+
+/* --------------------- nouveautés --------------------- */
+
+#grid-nouv {
+    display: grid;
+    grid-template-columns: repeat(2, 0.5fr) 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+    padding: 45px 95px;
+    background-color: $nouveautes;
+    #nouv1 { 
+        grid-area: 1 / 1 / 2 / 2;
+        h1{
+            vertical-align: middle;
+        }
+    }
+    #nouv2 { 
+        grid-area: 1 / 2 / 2 / 3;
+    }
+    #nouv3 { 
+        grid-area: 2 / 1 / 3 / 2;
+    }
+    #nouv4 { 
+        grid-area: 2 / 2 / 3 / 3;
+    }
+    #nouv5 { 
+        grid-area: 1 / 3 / 3 / 4;
+
+    }
+    .white-opacity{
+        position: relative;
+        text-align: center;
+        background: #FFF;
+        opacity: 0.7;
+        padding: 10px 0 20px 0;
+    }
+}
+
+/* --------------------- tendance --------------------- */
+
+#section-tendance{
+    background: $main;
+    h1{
+        padding-top: 80px;
+        text-align: center;
+    }
+    #tendances {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 16px;
+        grid-row-gap: 74px;
+        padding: 75px 95px;
+        .tendance-1{
+            background-color: $tendance-beige;
+            .title-i{
+                padding: 26px 21px 0 21px;
+                display: flex;
+                justify-content: space-between;
+                h2{
+                    text-transform: uppercase;
+                    font-weight: bold;
+                }
+                i{
+                    cursor: pointer;
+                    &:hover{
+                        color: red;
+                        transition: 0.2s;
+                    }
+                }
+            }
+            .p-span{
+                padding: 30px 21px 50px 21px;
+                display: flex;
+                justify-content: space-between;
+                span{
+                    font-weight: bold;
+                }
+                p{
+                    width: 70%;
+                }
+            }
+        }
+    }
+}
+
+/* --------------------- gallerie --------------------- */
+
+#gallerie{
+    background: $main;
+    text-align: center;
+    padding: 0 95px 80px 95px;
+    p{
+        font-size: 20px;
+        margin: 20px 0 35px 0;
+    }
+    img{
+        height: 100%;
+    }
+    #grid-gallerie1{
+        display: grid;
+        grid-template-columns: 1fr 0.55fr 1.3fr 0.9fr;
+        grid-template-rows: 1fr;
+        grid-column-gap: 16px;
+        grid-row-gap: 16px;
+    }
+    #grid-gallerie2{
+        display: grid;
+        grid-template-columns: 1.2fr repeat(2, 0.8fr) 0.5fr;
+        grid-template-rows: 1fr;
+        grid-column-gap: 16px;
+        grid-row-gap: 16px;
+        margin: 16px 0;
+    }
+    #grid-gallerie3{
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr 0.5fr 0.8fr;
+        grid-template-rows: 1fr;
+        grid-column-gap: 16px;
+        grid-row-gap: 16px;
+    }
+}
+
+/* --------------------- contact --------------------- */
+
+#background-grey{
+    background-color: $contact;
+    display: flex;
+    #picture{
+        background: url(../img/contact.png);
+        width: 65%;
+        text-align: center;
+        .background-white{
+            background: #FFF;
+            opacity: 0.85;
+            display: flex;
+            padding-bottom: 15px;
+            i{
+                color: $button-contact;
+                margin-right: 10px;
+            }
+        }
+    }
+    form{
+        text-align: center;
+        width: 35%;
+        /*h1{
+            padding: 65px 170px 70px 170px;
+        }*/
+        input{
+            border: none;
+            border-bottom: solid 2px $footer;
+            padding: 5px 30px 5px 10px;
+            background: $contact;
+        }
+        #flex{
+            display: flex;
+            padding: 0 15px;
+        }
+    }
+}
+
+/* --------------------- newsletter --------------------- */
+
+#newsletter{
+    background: $nouveautes;
+    display: flex;
+    justify-content: space-between;
+    padding: 85px 210px 170px 210px;
+    div{
+        width: 25%;
+        h1{
+            margin-bottom: 35px;
+        }
+    }
+    form{
+        display: flex;
+        align-items: center;
+        input{
+            margin-right: 25px;
+            border-radius: 14px;
+            border: none;
+            padding: 15px 50px 15px 15px;
+        }
+        button{
+            border-radius: 14px;
+            border: none;
+            padding: 15px 20px;
+            background: $footer;
+            color: #FFF;
+            &:hover{
+                color: $footer;
+                background: $nouveautes;
+                transition: 0.2s;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+/* --------------------- footer --------------------- */
+
+footer{
+    background: $footer;
+    color: #FFF;
+    #menu-footer{
+        padding: 60px 130px 80px 110px;
+        display: flex;
+        justify-content: space-between;
+        .footer li{
+            padding-top: 15px;
+        }
+        img{
+            width: 268px;
+            height: auto;
+        }
+        #social{
+            h1{
+                text-transform: capitalize;
+            }
+            #rs{
+                display: flex;
+                justify-content: space-between;
+                padding-top: 25px;
+                font-size: 25px;
+                margin: 0 -15px;
+            }
+        }
+    }
+    #copyright{
+        text-align: center;
+        padding-bottom: 40px;
+        a{
+            cursor: pointer;
+        }
+    }
+}

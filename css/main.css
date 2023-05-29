@@ -1,0 +1,338 @@
+@charset "UTF-8";
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, main {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, main {
+  display: block; }
+
+body {
+  line-height: 1.3; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+* {
+  box-sizing: border-box; }
+
+figure img {
+  width: 100%;
+  display: block; }
+
+.clearfix::after {
+  content: '';
+  display: block;
+  height: 0;
+  overflow: hidden;
+  clear: both; }
+
+html {
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+  font-size: 16px;
+  color: #1E1E1E; }
+  html a {
+    text-decoration: none;
+    color: inherit; }
+    html a:hover {
+      color: #FFD18C;
+      transition: 0.2s; }
+  html h1 {
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: bold; }
+
+/* --------------------- header --------------------- */
+header {
+  background: #FFFAF0;
+  vertical-align: middle; }
+  header nav {
+    display: flex;
+    justify-content: space-between; }
+    header nav img {
+      width: 268px;
+      height: auto;
+      position: relative; }
+    header nav .nav {
+      display: flex;
+      padding: 70px 100px 40px 100px; }
+      header nav .nav li {
+        font-size: 20px;
+        text-transform: uppercase; }
+        header nav .nav li:hover {
+          border-bottom: solid 2px #FFD18C; }
+    header nav .menu > li {
+      margin-right: 35px; }
+    header nav .picto > li {
+      margin-left: 20px; }
+      header nav .picto > li:hover {
+        color: #FFD18C;
+        transition: 0.2s; }
+    header nav #loupe {
+      margin-right: 30px; }
+
+/* --------------------- slider --------------------- */
+.slider img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  display: none; }
+
+img.active {
+  display: block;
+  animation: fade 0.8s; }
+
+@keyframes fade {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+div.left,
+div.right {
+  position: absolute;
+  top: 60%;
+  color: #1E1E1E;
+  font-size: 20px;
+  cursor: pointer;
+  user-select: none; }
+
+div.left {
+  left: 0px;
+  background: #FFF;
+  padding: 10px;
+  border-radius: 0 50px 50px 0; }
+  div.left:hover {
+    color: #FFF;
+    background-color: #FFD18C;
+    transition: 0.2s; }
+
+div.right {
+  right: 0px;
+  background: #FFF;
+  padding: 10px;
+  border-radius: 50px 0 0 50px; }
+  div.right:hover {
+    color: #FFF;
+    background-color: #FFD18C;
+    transition: 0.2s; }
+
+.button-white {
+  position: absolute;
+  top: 85%;
+  background: #F8F8F8;
+  padding: 10px 35px;
+  z-index: 5;
+  left: 45%; }
+
+/* --------------------- nouveautés --------------------- */
+#grid-nouv {
+  display: grid;
+  grid-template-columns: repeat(2, 0.5fr) 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  padding: 45px 95px;
+  background-color: #E6F4F1; }
+  #grid-nouv #nouv1 {
+    grid-area: 1 / 1 / 2 / 2; }
+    #grid-nouv #nouv1 h1 {
+      vertical-align: middle; }
+  #grid-nouv #nouv2 {
+    grid-area: 1 / 2 / 2 / 3; }
+  #grid-nouv #nouv3 {
+    grid-area: 2 / 1 / 3 / 2; }
+  #grid-nouv #nouv4 {
+    grid-area: 2 / 2 / 3 / 3; }
+  #grid-nouv #nouv5 {
+    grid-area: 1 / 3 / 3 / 4; }
+  #grid-nouv .white-opacity {
+    position: relative;
+    text-align: center;
+    background: #FFF;
+    opacity: 0.7;
+    padding: 10px 0 20px 0; }
+
+/* --------------------- tendance --------------------- */
+#section-tendance {
+  background: #F8F8F8; }
+  #section-tendance h1 {
+    padding-top: 80px;
+    text-align: center; }
+  #section-tendance #tendances {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 16px;
+    grid-row-gap: 74px;
+    padding: 75px 95px; }
+    #section-tendance #tendances .tendance-1 {
+      background-color: #F4EAE1; }
+      #section-tendance #tendances .tendance-1 .title-i {
+        padding: 26px 21px 0 21px;
+        display: flex;
+        justify-content: space-between; }
+        #section-tendance #tendances .tendance-1 .title-i h2 {
+          text-transform: uppercase;
+          font-weight: bold; }
+        #section-tendance #tendances .tendance-1 .title-i i {
+          cursor: pointer; }
+          #section-tendance #tendances .tendance-1 .title-i i:hover {
+            color: red;
+            transition: 0.2s; }
+      #section-tendance #tendances .tendance-1 .p-span {
+        padding: 30px 21px 50px 21px;
+        display: flex;
+        justify-content: space-between; }
+        #section-tendance #tendances .tendance-1 .p-span span {
+          font-weight: bold; }
+        #section-tendance #tendances .tendance-1 .p-span p {
+          width: 70%; }
+
+/* --------------------- gallerie --------------------- */
+#gallerie {
+  background: #F8F8F8;
+  text-align: center;
+  padding: 0 95px 80px 95px; }
+  #gallerie p {
+    font-size: 20px;
+    margin: 20px 0 35px 0; }
+  #gallerie img {
+    height: 100%; }
+  #gallerie #grid-gallerie1 {
+    display: grid;
+    grid-template-columns: 1fr 0.55fr 1.3fr 0.9fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 16px;
+    grid-row-gap: 16px; }
+  #gallerie #grid-gallerie2 {
+    display: grid;
+    grid-template-columns: 1.2fr repeat(2, 0.8fr) 0.5fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+    margin: 16px 0; }
+  #gallerie #grid-gallerie3 {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr 0.5fr 0.8fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 16px;
+    grid-row-gap: 16px; }
+
+/* --------------------- contact --------------------- */
+#background-grey {
+  background-color: #EEE;
+  display: flex; }
+  #background-grey #picture {
+    background: url(../img/contact.png);
+    width: 65%;
+    text-align: center; }
+    #background-grey #picture .background-white {
+      background: #FFF;
+      opacity: 0.85;
+      display: flex;
+      padding-bottom: 15px; }
+      #background-grey #picture .background-white i {
+        color: #D1B39F;
+        margin-right: 10px; }
+  #background-grey form {
+    text-align: center;
+    width: 35%;
+    /*h1{
+        padding: 65px 170px 70px 170px;
+    }*/ }
+    #background-grey form input {
+      border: none;
+      border-bottom: solid 2px #393939;
+      padding: 5px 30px 5px 10px;
+      background: #EEE; }
+    #background-grey form #flex {
+      display: flex;
+      padding: 0 15px; }
+
+/* --------------------- newsletter --------------------- */
+#newsletter {
+  background: #E6F4F1;
+  display: flex;
+  justify-content: space-between;
+  padding: 85px 210px 170px 210px; }
+  #newsletter div {
+    width: 25%; }
+    #newsletter div h1 {
+      margin-bottom: 35px; }
+  #newsletter form {
+    display: flex;
+    align-items: center; }
+    #newsletter form input {
+      margin-right: 25px;
+      border-radius: 14px;
+      border: none;
+      padding: 15px 50px 15px 15px; }
+    #newsletter form button {
+      border-radius: 14px;
+      border: none;
+      padding: 15px 20px;
+      background: #393939;
+      color: #FFF; }
+      #newsletter form button:hover {
+        color: #393939;
+        background: #E6F4F1;
+        transition: 0.2s;
+        cursor: pointer; }
+
+/* --------------------- footer --------------------- */
+footer {
+  background: #393939;
+  color: #FFF; }
+  footer #menu-footer {
+    padding: 60px 130px 80px 110px;
+    display: flex;
+    justify-content: space-between; }
+    footer #menu-footer .footer li {
+      padding-top: 15px; }
+    footer #menu-footer img {
+      width: 268px;
+      height: auto; }
+    footer #menu-footer #social h1 {
+      text-transform: capitalize; }
+    footer #menu-footer #social #rs {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 25px;
+      font-size: 25px;
+      margin: 0 -15px; }
+  footer #copyright {
+    text-align: center;
+    padding-bottom: 40px; }
+    footer #copyright a {
+      cursor: pointer; }
+
+/*# sourceMappingURL=main.css.map */
