@@ -424,6 +424,11 @@ footer{
         }
     }
 }
+.nav-toggler{
+    display: none;
+}
+
+/* --------------------- responsive --------------------- */
 
 @media screen and (max-width: 1450px){
     .button-white {
@@ -543,5 +548,365 @@ footer{
         padding: 60px 20px 80px 20px;
         justify-content: space-evenly;
         flex-wrap: wrap;
+    }
+    header nav {
+        justify-content: space-around;
+    }
+}
+@media screen and (max-width: 794px){
+
+    header nav {
+        padding: 0;
+        position: fixed;
+        z-index: 6;
+        width: 100%;
+        background: $header;
+        justify-content: flex-end;
+        img{
+            width: 180px;
+            height: auto;
+        }
+    }
+    .slider img {
+        padding-top: 100px;
+    }
+
+    /* --------------------- menu burger --------------------- */
+
+    .nav-toggler{
+        position: fixed;
+        z-index: 10;
+        top: 30px;
+        left: 30px;
+        height: 50px;
+        width: 50px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: transparent;
+        .line{
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: $font-color;
+            transition: transform 0.3s ease-out,
+            opacity 0.1s ease-out;
+        }
+        .l1{
+            transform: translateY(-10px);
+        }
+        .l3{
+            transform: translateY(10px);
+        }
+    }
+    .nav-toggler.active .l1{
+        transform: translateY(0px) rotate(135deg);
+    }
+    .nav-toggler.active .l2{
+        opacity: 0;
+    }
+    .nav-toggler.active .l3{
+        transform: translateY(0px) rotate(-135deg);
+    }
+    header nav .nav-menu{
+        position: fixed;
+        width: 100vw;
+        min-height: 35vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: $header;
+        transform: translateY(-100%);
+        transition: transform 0.3s cubic-bezier(0.73, 0.11, 0.67, 0.84)
+    }
+    header nav .nav-menu.active{
+        transform: translate(0);
+    }
+    .button-white {
+        top: 48%;
+        left: 36%;
+    }
+    #background-grey #picture{
+        padding-top: 55%;
+    }
+    #background-grey #picture::before {
+        width: 290px;
+        margin: -18px 6%;
+    }
+    #background-grey #picture {
+        padding-top: 125%;
+    }
+}
+
+@media screen and (max-width: 778px){
+    .button-white {
+        top: 40%;
+        padding: 7px 20px;
+        left: 38%;
+    }
+    div.left, 
+    div.right {
+        top: 26%;
+        font-size: 14px;
+        padding: 6px;
+    }
+    #background-grey #picture{
+        padding-top: 75%;
+        &::before{
+            margin: -18px 10%;
+        }
+        .background-white{
+            padding: 0 27%;
+        }
+    }
+    #background-grey {
+        grid-template-columns: 1fr;
+        #picture::before {
+            margin: -18px 32%;
+        }
+        #picture .background-white {
+            padding: 0 0 0 35%;
+        }
+    }
+    #background-grey form #flex {
+        justify-content: center;
+        input{
+            padding-right: 95px;
+        }
+    }
+}
+
+@media screen and (max-width: 500px){
+    body{
+        width: fit-content;
+    }
+    .button-white {
+        top: 30%;
+        padding: 7px 20px;
+        left: 33%;
+    }
+    div.left, 
+    div.right {
+        top: 22%;
+        font-size: 14px;
+        padding: 6px;
+    }
+    #background-grey{
+        max-width: 100%;
+        #picture{
+            padding-top: 75%;
+            &::before{
+                margin: -18px 22%;
+            }
+            .background-white{
+                padding: 0 0 0 28%;
+            }
+        }
+        form #flex input {
+            padding-right: 26px;
+        }
+    }
+    #grid-nouv {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.1fr repeat(4, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 16px;
+        #nouv1 {
+            grid-area: 1 / 1 / 1 / 3;
+            h1{
+                padding: 0;
+            }
+        }
+        #nouv2 {
+            grid-area: 2 / 1 / 2 / 3;
+        }
+        #nouv3 {
+            grid-area: 3 / 2 / 3 / 3;
+        }
+        #nouv4 {
+            grid-area: 4 / 2 / 4 / 3;
+        }
+        #nouv5 {
+            grid-area: 5 / 1 / 5 / 3;
+        }
+    }
+    #section-tendance #tendances {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(8, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 16px;
+    }
+    #gallerie #grid-gallerie1 {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 16px;
+    }
+    #gallerie #grid-gallerie2 {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 16px;
+    }
+    #gallerie #grid-gallerie3 {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 16px;
+    }
+    #newsletter{
+        display: block;
+        form {
+            display: block;
+            text-align: center;
+            input{
+                margin-right: 0;
+                margin-bottom: 30px;
+            }
+        }
+        div{
+            width: auto;
+            text-align: center;
+            padding-bottom: 50px;
+        }
+    }
+    footer #menu-footer {
+        text-align: center;
+        ul {
+            list-style: none;
+            margin-bottom: 50px;
+        }
+    }
+}
+
+@media screen and (max-width: 425px){
+    html h1{
+        font-size: 20px;
+    }
+    .button-white {
+        top: 28%;
+        left: 29%;
+    }
+    div.left, 
+    div.right {
+        top: 20%;
+    }
+    div.right{
+        right: -9px;
+    }
+    #background-grey{
+        #picture{
+            &::before{
+                margin: -18px 20%;
+            }
+            .background-white{
+                padding: 0 0 0 26%;
+            }
+        }
+        form #flex input {
+            padding-right: 9px;
+        }
+    }
+    header nav img {
+        width: 155px;
+        height: auto;
+        top: 10px;
+    }
+    .slider img {
+        padding-top: 89px;
+    }
+    .nav-toggler{
+        top: 20px;
+    }
+    #grid-nouv{
+        padding: 45px 45px;
+    }
+    #section-tendance #tendances{
+        padding: 35px 45px;
+    }
+    #gallerie{
+        padding: 0 45px 80px 45px;
+        p{
+            font-size: 15px;
+        }
+    }
+    header nav .nav-menu {
+        width: 103vw;
+        li {
+            margin-right: 0px;
+        }
+    }
+}
+@media screen and (max-width: 375px){
+    .button-white {
+        top: 25%;
+        left: 37%;
+        font-size: 15px;
+    }
+    div.left, 
+    div.right {
+        top: 20%;
+    }
+    div.right{
+        right: -59px;
+    }
+    #background-grey{
+        #picture{
+            &::before{
+                margin: -18px 19%;
+            }
+            .background-white{
+                padding: 0 0 0 24%;
+            }
+        }
+        form #flex input {
+            padding-right: 9px;
+        }
+    }
+    header nav{
+        img {
+            width: 120px;
+            height: auto;
+            top: 0;
+        }
+        .nav li{
+            font-size: 16px;
+        }
+        .nav-menu{
+            width: 116vw;
+        }
+    }
+    .nav-toggler{
+        top: 8px;
+        .line{
+            width: 80%;
+        }
+    }
+    .slider img{
+        padding-top: 71px;
+    }
+}
+
+@media screen and (max-width: 320px){
+    header nav{
+        .nav-menu{
+            width: 136vw;
+        }
+    }
+    #background-grey #picture::before {
+        margin: -18px 22%;
+    }
+    div.right{
+        right: -114px;
     }
 }

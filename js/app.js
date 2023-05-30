@@ -1,3 +1,4 @@
+/*------------------------ slider ------------------------*/
 const items = document.querySelectorAll('.slider img');
 const nbSlide = items.length;
 const suivant = document.querySelector('.right');
@@ -51,3 +52,15 @@ function startInfiniteSlide() {
 
 document.addEventListener("mouseenter", stopInfiniteSlide);
 document.addEventListener("mouseleave", startInfiniteSlide);
+
+/*------------------------ menu déroulant ------------------------*/
+
+const hamburgerButton = document.querySelector('.nav-toggler')
+const navigation = document.querySelector('.nav-menu')
+
+hamburgerButton.addEventListener('click', toggleNav)
+
+function toggleNav(){
+    hamburgerButton.classList.toggle('active')
+    navigation.classList.toggle('active')
+}
